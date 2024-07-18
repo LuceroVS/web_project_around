@@ -3,29 +3,29 @@
   height: 743px;
   margin: 50px 200px 67px 200px;
 }
-.elements__places {
+.elements-places {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 17px;
 }
-.element__place {
+.element-place {
   width: 282px;
   height: 361px;
   background-color: white;
   margin-bottom: 20px;
   border-radius: 10px;
 }
-.element__place-photo {
+.element-place__photo {
   width: 282px;
   height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.element__data {
+.element-place-data {
   display: flex;
 }
-.element__data-name {
+.element-place-data__name {
   color: black;
   margin: 25px 15px 31px 21px;
   width: 246px;
@@ -39,7 +39,7 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.element__data-like {
+.element-place-data__like {
   width: 21px;
   height: 19px;
   margin: 30px 18px 30px auto;
@@ -51,28 +51,28 @@
     height: 2266px;
     margin: 0px 19px 0px 19px;
   }
-  .elements__places {
+  .elements-places {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
   }
-  .element__place {
+  .element-place {
     width: 282px;
     height: 361px;
     background-color: white;
     margin-bottom: 20px;
     border-radius: 10px;
   }
-  .element__place-photo {
+  .element-place__photo {
     width: 282px;
     height: 282px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
-  .element__data {
+  .element-place-data {
     display: flex;
   }
-  .element__data-name {
+  .element-place-data__name {
     color: black;
     margin: 25px 15px 31px 21px;
     width: 246px;
@@ -86,7 +86,7 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  .element__data-like {
+  .element-place-data__like {
     width: 21px;
     height: 19px;
     margin: 30px 18px 30px auto;
