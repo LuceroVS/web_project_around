@@ -1,0 +1,116 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1000;
+}
+.popup__container {
+  width: 430px;
+  height: 330px;
+  background-color: white;
+  color: black;
+  top: 195px;
+  margin-left: 425px;
+  position: absolute;
+  display: none;
+  z-index: 1001;
+  border-radius: 4%;
+}
+.popup__container-title {
+  width: 330px;
+  height: 23px;
+  margin: 34px 64px 54px 36px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+}
+.popup__container-name {
+  width: 358px;
+  height: 27.26px;
+  margin: 0px 37px 29px 35px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+.popup__container-profession {
+  width: 358px;
+  height: 27.34px;
+  margin: 0px 37px 48px 35px;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+}
+.popup__container-close {
+  position: absolute;
+}
+.popup__container-closed {
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-top: -25px;
+  margin-left: 433px;
+  font-size: 30px;
+}
+@media screen and (max-width: 321px) {
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+  }
+  .popup__container {
+    width: 282px;
+    height: 322px;
+    background-color: white;
+    color: black;
+    top: 123px;
+    margin-left: 19px;
+    position: absolute;
+    display: none;
+    z-index: 1001;
+    border-radius: 4%;
+  }
+  .popup__container-title {
+    width: 238px;
+    height: 22px;
+    margin: 25px 22px 76px 22px;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.78px;
+    text-align: left;
+  }
+  .popup__container-name {
+    width: 238px;
+    height: 26px;
+    margin: 0px 22px 30px 22px;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+  }
+  .popup__container-profession {
+    width: 238px;
+    height: 26px;
+    margin: 0px 22px 46px 22px;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+  }
+  .popup__container-close {
+    position: absolute;
+  }
+  .popup__container-closed {
+    color: white;
+    width: 26px;
+    height: 26px;
+    margin-top: -25px;
+    margin-left: 266px;
+    font-size: 20px;
+  }
+}

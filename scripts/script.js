@@ -1,32 +1,37 @@
 profileEditButton = document.getElementById("profile_edit_button");
-profileEditButton.addEventListener("click", showModify);
+profileEditButton.addEventListener("click", showPopupContainer);
 
-function showModify() {
-  modifyForm = document.getElementById("modify");
-  page = document.getElementById("page");
-  modifyForm.style.display = "block";
+function showPopupContainer() {
+  popupContainerForm = document.getElementById("popupContainer");
+  popupContainerForm.style.display = "block";
+  popupForm = document.getElementById("popup");
+  popupForm.style.display = "block";
 }
 
-profileCloseModify = document.getElementById("close");
-profileCloseModify.addEventListener("click", closeModify);
+profileClosePopupContainer = document.getElementById("popupContainerclose");
+profileClosePopupContainer.addEventListener("click", closePopupContainer);
 
-function closeModify() {
-  modifyForm = document.getElementById("modify");
-  modifyForm.style.display = "none";
+function closePopupContainer() {
+  popupContainerForm = document.getElementById("popupContainer");
+  popupContainerForm.style.display = "none";
+  popupForm = document.getElementById("popup");
+  popupForm.style.display = "none";
 }
 
-profileSaveModify = document.getElementById("save");
-profileSaveModify.addEventListener("click", saveModify);
+profileSavePopupContainer = document.getElementById("save");
+profileSavePopupContainer.addEventListener("click", saveModify);
 
 function saveModify() {
-  profileNameModify = document.getElementById("nameModify");
+  profileNameModify = document.getElementById("popupContainerName");
   profileNameModifyValue = profileNameModify.value;
-  profileProfessionModify = document.getElementById("professionModify");
+  profileProfessionModify = document.getElementById("popupContainerProfession");
   profileProfessionModifyValue = profileProfessionModify.value;
-  modifyForm = document.getElementById("modify");
-  modifyForm.style.display = "none";
+  popupContainerForm = document.getElementById("popupContainer");
+  popupContainerForm.style.display = "none";
   profileInfoName = document.getElementById("profileInfoName");
   profileInfoJob = document.getElementById("profileInfoJob");
   profileInfoName.innerHTML = profileNameModifyValue;
   profileInfoJob.innerHTML = profileProfessionModifyValue;
+  popupForm = document.getElementById("popup");
+  popupForm.style.display = "none";
 }
