@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Around USA</title>
+    <meta name="author" content="Lucero Villafuerte" />
+    <meta name="description" content="Around USA" />
+    <meta name="keywords" content="Around, USA" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          class="header__title"
+          src="images/title.png"
+          alt="title"
+          data-type="logo"
+        />
+      </header>
+      <main>
+        <section class="profile">
+          <div class="profile__photo">
+            <img
+              class="profile__photo-picture"
+              src="images/face.png"
+              alt="photo"
+              data-type="face"
+            />
+          </div>
+          <div class="profile__data">
+            <div class="profile__info">
+              <h1 class="profile__name" id="profileInfoName">
+                Lucero Villafuerte
+              </h1>
+              <img
+                class="profile__edit-button"
+                id="profile_edit_button"
+                src="images/button_edit.png"
+                alt="edit_photo"
+                data-type="edit"
+              />
+            </div>
+            <div class="profile__job">
+              <p class="profile__profession" id="profileInfoJob">Informatica</p>
+            </div>
+          </div>
+          <div class="profile__icon">
+            <img
+              class="profile__icon-add"
+              src="images/button_add.png"
+              alt="add_info"
+              data-type="add_info"
+            />
+          </div>
+        </section>
+        <section class="elements">
+          <div class="elements__places">
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/alaska.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">Alaska</h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/grand_cayon.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">
+                  Parque nacional del Gran Cañón
+                </h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/hawaii.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">Miami Beach</h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/miami.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">Manhattan Beach</h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/park_alaska.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">Mendenhall Glacier</h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+            <div class="element__place">
+              <img
+                class="element__place-photo"
+                src="images/hollywood.jpg"
+                alt="edit_photo"
+                data-type="edit"
+              />
+              <div class="element__data">
+                <h2 class="element__data-name">Hollywood Hills</h2>
+                <img
+                  class="element__data-like"
+                  src="images/like.png"
+                  alt="like_pohoto"
+                  data-type="like"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="popup" id="popup"></div>
+        <div class="popup__container" id="popupContainer">
+          <div class="popup__container-close" id="popupContainerclose">
+            <p class="popup__container-closed">X</p>
+          </div>
+          <h3 class="popup__container-title">Editar perfil</h3>
+          <input
+            type="text"
+            class="popup__container-name"
+            id="popupContainerName"
+            placeholder="Nombre"
+          />
+          <input
+            type="text"
+            class="popup__container-profession"
+            id="popupContainerProfession"
+            placeholder="Acerca de mí"
+          />
+          <div class="save" id="save">
+            <p class="save__changes">Guardar</p>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyrights">&copy; 2024. Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
