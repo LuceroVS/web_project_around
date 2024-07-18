@@ -15,7 +15,7 @@
   text-align: center;
   margin: 13.66px 124px 18.49px 125px;
 }
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 320px) {
   .save {
     width: 238px;
     height: 46px;

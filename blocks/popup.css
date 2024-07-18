@@ -8,7 +8,7 @@
   display: none;
   z-index: 1000;
 }
-.popup__container {
+.popup-container {
   width: 430px;
   height: 330px;
   background-color: white;
@@ -20,7 +20,7 @@
   z-index: 1001;
   border-radius: 4%;
 }
-.popup__container-title {
+.popup-container__title {
   width: 330px;
   height: 23px;
   margin: 34px 64px 54px 36px;
@@ -30,24 +30,24 @@
   line-height: 29.05px;
   text-align: left;
 }
-.popup__container-name {
+.popup-container__name {
   width: 358px;
   height: 27.26px;
   margin: 0px 37px 29px 35px;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
-.popup__container-profession {
+.popup-container__profession {
   width: 358px;
   height: 27.34px;
   margin: 0px 37px 48px 35px;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
-.popup__container-close {
+.popup-container-close {
   position: absolute;
 }
-.popup__container-closed {
+.popup-container__closed {
   color: white;
   width: 40px;
   height: 40px;
@@ -55,7 +55,7 @@
   margin-left: 433px;
   font-size: 30px;
 }
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 320px) {
   .popup {
     position: fixed;
     top: 0;
@@ -66,7 +66,7 @@
     display: none;
     z-index: 1000;
   }
-  .popup__container {
+  .popup-container {
     width: 282px;
     height: 322px;
     background-color: white;
@@ -78,7 +78,7 @@
     z-index: 1001;
     border-radius: 4%;
   }
-  .popup__container-title {
+  .popup-container__title {
     width: 238px;
     height: 22px;
     margin: 25px 22px 76px 22px;
@@ -88,24 +88,24 @@
     line-height: 21.78px;
     text-align: left;
   }
-  .popup__container-name {
+  .popup-container__name {
     width: 238px;
     height: 26px;
     margin: 0px 22px 30px 22px;
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
-  .popup__container-profession {
+  .popup-container__profession {
     width: 238px;
     height: 26px;
     margin: 0px 22px 46px 22px;
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
-  .popup__container-close {
+  .popup-container-close {
     position: absolute;
   }
-  .popup__container-closed {
+  .popup-container__closed {
     color: white;
     width: 26px;
     height: 26px;
