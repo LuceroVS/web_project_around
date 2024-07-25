@@ -34,3 +34,22 @@
     margin: 14px 92px 14px 92px;
   }
 }
+@media screen and (max-width: 1279px) and (min-width: 321px) {
+  .save {
+    width: 283px;
+    height: 50.15px;
+    margin: 24px 44px 36.51px 46px;
+    border: 1px solid rgba(196, 196, 196, 1);
+  }
+  .save__changes {
+    width: 94px;
+    height: 21px;
+    color: rgba(196, 196, 196, 1);
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+    margin: 14.66px 92px 13.49px 96px;
+  }
+}

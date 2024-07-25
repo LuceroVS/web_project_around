@@ -24,3 +24,16 @@
     height: 24px;
   }
 }
+@media screen and (max-width: 1279px) and (min-width: 321px) {
+  .header {
+    width: 740px;
+    height: 64px;
+    margin: 39px 66px 35px 66px;
+    border-bottom: 1px solid #545454;
+  }
+  .header__title {
+    margin: 0;
+    width: 173px;
+    height: 33px;
+  }
+}

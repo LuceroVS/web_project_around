@@ -109,3 +109,59 @@
     margin: 0px 19px 36px auto;
   }
 }
+@media screen and (max-width: 1279px) and (min-width: 321px) {
+  .profile {
+    display: flex;
+    width: 748px;
+    height: 110px;
+    margin: 18px 74px 0px 57px;
+    color: white;
+  }
+  .profile__photo {
+  }
+  .profile__photo-picture {
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    border-radius: 50%;
+  }
+  .profile__data {
+  }
+  .profile__info {
+    display: flex;
+  }
+  .profile__name {
+    width: 305px;
+    height: 37px;
+    margin: 14px 14px 14px 20px;
+    font-family: Inter;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+  }
+  .profile__edit-button {
+    width: 24px;
+    height: 24px;
+    margin-top: 30px;
+  }
+  .profile__job {
+  }
+  .profile__profession {
+    width: 290px;
+    height: 19px;
+    margin: 0px 0px 10px 22px;
+    font-family: Inter;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: left;
+  }
+  .profile__icon {
+  }
+  .profile__icon-add {
+    width: 124px;
+    height: 45px;
+    margin: 23px 0px 28px 155px;
+  }
+}
