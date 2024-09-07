@@ -18,6 +18,10 @@ https://lucerovs.github.io/web_project_around/
   <img src="images/demo.png" />
 </div>
 
+<div align="center">
+  <img src="images/demo_add_image.png" />
+</div>
+
 ### 🧰 Version Control
 
 |                                                        Technology Icon                                                        | Technology Name | URL                                                                                                     |
