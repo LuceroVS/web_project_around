@@ -1,6 +1,6 @@
 .elements {
   width: 880px;
-  height: 743px;
+  height: auto;
   margin: 50px 200px 67px 200px;
 }
 .elements-places {
@@ -22,14 +22,15 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
 .element-place-data {
   display: flex;
 }
 .element-place-data__name {
   color: black;
-  margin: 25px 15px 31px 21px;
+  margin: 19px 10px 23px 32px;
   width: 246px;
-  height: 23px;
+  height: 32px;
   font-family: Inter;
   font-size: 24px;
   font-weight: 900;
@@ -42,13 +43,25 @@
 .element-place-data__like {
   width: 21px;
   height: 19px;
-  margin: 30px 18px 30px auto;
+  margin: 20px 13px 35px auto;
+}
+.element-place-data__blacklike {
+  width: 21px;
+  height: 19px;
+  margin: 20px 13px 35px auto;
+  display: none;
+  z-index: 1000;
+}
+.element-place-data__trash {
+  width: 21px;
+  height: 19px;
+  margin: -274px 13px 30px auto;
 }
 
 @media screen and (max-width: 320px) {
   .elements {
     width: 282px;
-    height: 2266px;
+    height: auto;
     margin: 0px 19px 0px 19px;
   }
   .elements-places {
@@ -69,14 +82,15 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
+
   .element-place-data {
     display: flex;
   }
   .element-place-data__name {
     color: black;
-    margin: 25px 15px 31px 21px;
+    margin: 19px 10px 23px 32px;
     width: 246px;
-    height: 23px;
+    height: 32px;
     font-family: Inter;
     font-size: 24px;
     font-weight: 900;
@@ -89,13 +103,25 @@
   .element-place-data__like {
     width: 21px;
     height: 19px;
-    margin: 30px 18px 30px auto;
+    margin: 20px 13px 35px auto;
+  }
+  .element-place-data__blacklike {
+    width: 21px;
+    height: 19px;
+    margin: 20px 13px 35px auto;
+    display: none;
+    z-index: 1000;
+  }
+  .element-place-data__trash {
+    width: 21px;
+    height: 19px;
+    margin: -274px 13px 30px auto;
   }
 }
 @media screen and (max-width: 1279px) and (min-width: 321px) {
   .elements {
     width: 583px;
-    height: 1125px;
+    height: auto;
     margin: 50px 141px 67px 154px;
   }
   .elements-places {
@@ -122,9 +148,9 @@
   }
   .element-place-data__name {
     color: black;
-    margin: 25px 15px 31px 21px;
+    margin: 19px 10px 23px 32px;
     width: 246px;
-    height: 23px;
+    height: 32px;
     font-family: Inter;
     font-size: 24px;
     font-weight: 900;
@@ -137,6 +163,18 @@
   .element-place-data__like {
     width: 21px;
     height: 19px;
-    margin: 30px 18px 30px auto;
+    margin: 20px 13px 35px auto;
+  }
+  .element-place-data__blacklike {
+    width: 21px;
+    height: 19px;
+    margin: 20px 13px 35px auto;
+    display: none;
+    z-index: 1000;
+  }
+  .element-place-data__trash {
+    width: 21px;
+    height: 19px;
+    margin: -274px 13px 30px auto;
   }
 }

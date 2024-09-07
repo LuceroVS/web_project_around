@@ -1,0 +1,145 @@
+.open-image__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: none;
+  z-index: 1000;
+}
+.open-image {
+  position: absolute;
+  display: none;
+  z-index: 10001;
+}
+.open-image__big {
+  width: 583px;
+  height: 935px;
+  display: flex;
+  margin: -1067px 12px auto 348px;
+  position: absolute;
+}
+.open-image-close {
+  position: absolute;
+}
+
+.open-image__closed {
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-top: -1090px;
+  margin-left: 931px;
+  font-size: 38px;
+}
+.open-image-title {
+  position: absolute;
+}
+.open-image__name {
+  color: white;
+  width: 480px;
+  height: 55px;
+  margin-top: -121px;
+  margin-left: 346px;
+  margin-bottom: 0;
+  font-size: 25px;
+}
+
+@media screen and (max-width: 320px) {
+  .open-image__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    z-index: 1000;
+  }
+  .open-image {
+    position: absolute;
+    display: none;
+    z-index: 1001;
+  }
+  .open-image__big {
+    width: 269px;
+    height: 602px;
+    display: block;
+    position: absolute;
+    margin: -2564px 12px auto 28px;
+  }
+  .open-image-close {
+    position: absolute;
+  }
+
+  .open-image__closed {
+    color: white;
+    width: 15px;
+    height: 19px;
+    margin-top: -2581px;
+    margin-left: 296px;
+    font-size: 19px;
+  }
+  .open-image-title {
+    position: absolute;
+  }
+  .open-image__name {
+    color: white;
+    width: 222px;
+    height: 45px;
+    margin-top: -1954px;
+    margin-left: 29px;
+    margin-bottom: 0;
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 1279px) and (min-width: 321px) {
+  .open-image__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: none;
+    z-index: 1000;
+  }
+  .open-image {
+    position: absolute;
+    display: none;
+    z-index: 10001;
+  }
+  .open-image__big {
+    width: 516px;
+    height: 877px;
+    display: flex;
+    position: fixed;
+    margin: 0 12px auto 187px;
+    top: 276px;
+  }
+  .open-image-close {
+    position: absolute;
+  }
+
+  .open-image__closed {
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin-top: -1255px;
+    margin-left: 704px;
+    font-size: 34px;
+  }
+  .open-image-title {
+    position: absolute;
+  }
+  .open-image__name {
+    color: white;
+    width: 413px;
+    height: 38px;
+    margin-top: -349px;
+    margin-left: 188px;
+    margin-bottom: 0;
+    font-size: 22px;
+  }
+}

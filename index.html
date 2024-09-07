@@ -50,6 +50,7 @@
           <div class="profile__icon">
             <img
               class="profile__icon-add"
+              id="image_edit_button"
               src="images/button_add.png"
               alt="add_info"
               data-type="add_info"
@@ -57,114 +58,54 @@
           </div>
         </section>
         <section class="elements">
-          <div class="elements-places">
-            <div class="element-place">
+          <div id="elemenPlacesImages" class="elements-places"></div>
+        </section>
+        <template id="imagesTemplate">
+          <div id="placeElemenImages" class="element-place">
+            <img
+              class="element-place__photo"
+              src=""
+              id="gridImages"
+              alt=""
+              data-type=""
+            />
+            <div class="element-place-data">
+              <h2 id="placeName" class="element-place-data__name"></h2>
               <img
-                class="element-place__photo"
-                src="images/alaska.png"
-                alt="edit_photo"
-                data-type="edit"
+                class="element-place-data__like"
+                src="images/like.png"
+                id="imageWhiteLike"
+                alt="like_pohoto"
+                data-type="like"
+                data-target="white"
               />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">Alaska</h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
-            </div>
-            <div class="element-place">
               <img
-                class="element-place__photo"
-                src="images/grand_cayon.jpg"
-                alt="edit_photo"
-                data-type="edit"
+                class="element-place-data__trash"
+                src="images/trash.svg"
+                id="deleteImage"
+                alt="trash_pohoto"
+                data-type="trash"
               />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">
-                  Parque nacional del Gran Cañón
-                </h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
-            </div>
-            <div class="element-place">
-              <img
-                class="element-place__photo"
-                src="images/hawaii.jpg"
-                alt="edit_photo"
-                data-type="edit"
-              />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">Miami Beach</h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
-            </div>
-            <div class="element-place">
-              <img
-                class="element-place__photo"
-                src="images/miami.jpg"
-                alt="edit_photo"
-                data-type="edit"
-              />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">Manhattan Beach</h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
-            </div>
-            <div class="element-place">
-              <img
-                class="element-place__photo"
-                src="images/park_alaska.jpg"
-                alt="edit_photo"
-                data-type="edit"
-              />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">Mendenhall Glacier</h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
-            </div>
-            <div class="element-place">
-              <img
-                class="element-place__photo"
-                src="images/hollywood.jpg"
-                alt="edit_photo"
-                data-type="edit"
-              />
-              <div class="element-place-data">
-                <h2 class="element-place-data__name">Hollywood Hills</h2>
-                <img
-                  class="element-place-data__like"
-                  src="images/like.png"
-                  alt="like_pohoto"
-                  data-type="like"
-                />
-              </div>
             </div>
           </div>
-        </section>
-        <div class="popup" id="popup"></div>
+        </template>
+        <div class="open-image__background" id="blackBackgrountImage"></div>
+        <div class="open-image" id="openImage">
+          <div class="open-image-close" id="openImageClose">
+            <p class="open-image__closed">X</p>
+          </div>
+          <img
+            class="open-image__big"
+            src=""
+            id="imageLookBig"
+            alt="image_place"
+            data-type="image"
+          />
+          <div class="open-image-title">
+            <p class="open-image__name" id="nameImageLookBig"></p>
+          </div>
+        </div>
+        <div class="popup_background" id="popup"></div>
         <div class="popup-container" id="popupContainer">
           <div class="popup-container-close" id="popupContainerclose">
             <p class="popup-container__closed">X</p>
@@ -182,8 +123,30 @@
             id="popupContainerProfession"
             placeholder="Acerca de mí"
           />
-          <div class="save" id="save">
-            <p class="save__changes">Guardar</p>
+          <div class="save-profile" id="save">
+            <p class="save-profile__changes">Guardar</p>
+          </div>
+        </div>
+        <div class="popup-background_image" id="popupBackgroundImage"></div>
+        <div class="popup-image" id="popupImage">
+          <div class="popup-image__close" id="popupImageClose">
+            <p class="popup-image__closed">X</p>
+          </div>
+          <h3 class="popup-image__title">Nuevo Lugar</h3>
+          <input
+            type="text"
+            class="popup-image__name"
+            id="popupImageName"
+            placeholder="Nombre"
+          />
+          <input
+            type="text"
+            class="popup-image__url"
+            id="popupImageDirection"
+            placeholder="Imagen URL"
+          />
+          <div class="save-image" id="saveImage">
+            <p class="save-image__changes">Guardar</p>
           </div>
         </div>
       </main>

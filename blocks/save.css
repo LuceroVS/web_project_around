@@ -1,13 +1,17 @@
-.save {
+.save-profile {
   width: 358px;
   height: 50.15px;
   margin: 0px 36px 36.51px 36px;
   border: 1px solid rgba(196, 196, 196, 1);
+  background-color: black;
 }
-.save__changes {
+.save-profile:hover {
+  opacity: 0.5;
+}
+.save-profile__changes {
   width: 109px;
   height: 18px;
-  color: rgba(196, 196, 196, 1);
+  color: rgba(255, 255, 255, 1);
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -15,17 +19,63 @@
   text-align: center;
   margin: 13.66px 124px 18.49px 125px;
 }
+.save-image {
+  width: 358px;
+  height: 50.15px;
+  margin: 0px 36px 36.51px 36px;
+  border: 1px solid rgba(196, 196, 196, 1);
+  background-color: black;
+}
+.save-image:hover {
+  opacity: 0.5;
+}
+.save-image__changes {
+  width: 109px;
+  height: 18px;
+  color: rgba(255, 255, 255, 1);
+  font-family: Inter;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+  margin: 13.66px 124px 18.49px 125px;
+}
 @media screen and (max-width: 320px) {
-  .save {
-    width: 238px;
-    height: 46px;
+  .save-profile {
+    width: 235px;
+    height: 38px;
     margin: 0px 22px 25px 22px;
-    border: 1px solid rgba(196, 196, 196, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: black;
   }
-  .save__changes {
+  .save-profile:hover {
+    opacity: 0.5;
+  }
+  .save-profile__changes {
     width: 54px;
     height: 18px;
-    color: rgba(196, 196, 196, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: center;
+    margin: 14px 92px 14px 92px;
+  }
+  .save-image {
+    width: 235px;
+    height: 38px;
+    margin: 0px 22px 25px 22px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: black;
+  }
+  .save-image:hover {
+    opacity: 0.5;
+  }
+  .save-image__changes {
+    width: 54px;
+    height: 10px;
+    color: rgba(255, 255, 255, 1);
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
@@ -35,16 +85,42 @@
   }
 }
 @media screen and (max-width: 1279px) and (min-width: 321px) {
-  .save {
+  .save-profile {
     width: 283px;
     height: 50.15px;
     margin: 24px 44px 36.51px 46px;
-    border: 1px solid rgba(196, 196, 196, 1);
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: black;
   }
-  .save__changes {
+  .save-profile:hover {
+    opacity: 0.5;
+  }
+
+  .save-profile__changes {
     width: 94px;
     height: 21px;
-    color: rgba(196, 196, 196, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: center;
+    margin: 14.66px 92px 13.49px 96px;
+  }
+  .save-image {
+    width: 283px;
+    height: 50.15px;
+    margin: 24px 44px 36.51px 46px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: black;
+  }
+  .save-image:hover {
+    opacity: 0.5;
+  }
+  .save-image__changes {
+    width: 94px;
+    height: 21px;
+    color: rgba(255, 255, 255, 1);
     font-family: Inter;
     font-size: 18px;
     font-weight: 400;
