@@ -42,25 +42,8 @@ initialCards.forEach((url) => {
   elemenPlacesImages.appendChild(elementPLacesClone);
 });
 
-let profileEditButton = document.getElementById("profile_edit_button");
-profileEditButton.addEventListener("click", showPopupContainer);
-
-function showPopupContainer() {
-  let popupContainerForm = document.getElementById("popupContainer");
-  popupContainerForm.style.display = "block";
-  let popupForm = document.getElementById("popup");
-  popupForm.style.display = "block";
-}
-
 let profileClosePopupContainer = document.getElementById("popupContainerclose");
 profileClosePopupContainer.addEventListener("click", closePopupContainer);
-
-function closePopupContainer() {
-  let popupContainerForm = document.getElementById("popupContainer");
-  popupContainerForm.style.display = "none";
-  let popupForm = document.getElementById("popup");
-  popupForm.style.display = "none";
-}
 
 let profileSavePopupContainer = document.getElementById("save");
 profileSavePopupContainer.addEventListener("click", saveModify);
@@ -78,14 +61,25 @@ function saveModify() {
   let profileInfoJob = document.getElementById("profileInfoJob");
   profileInfoName.innerHTML = profileNameModifyValue;
   profileInfoJob.innerHTML = profileProfessionModifyValue;
-  let popupForm = document.getElementById("popup");
+  let popupForm = document.getElementById("popupBackgroundProfile");
   popupForm.style.display = "none";
 }
 
 let imageEditButton = document.getElementById("image_edit_button");
+let profileEditButton = document.getElementById("profile_edit_button");
+let profileForm = document.getElementById("popupContainer");
+profileEditButton.addEventListener("click", showPopupContainer);
 imageEditButton.addEventListener("click", showPopupImage);
+profileForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  saveModify();
+});
 
 function showPopupImage() {
+  saveImage.setAttribute("disabled", true);
+  saveImage.classList.add("input__btn_disabled");
+  formInputImageName.value = "";
+  formInputImageDirection.value = "";
   let popupImagenAdd = document.getElementById("popupImage");
   popupImagenAdd.style.display = "block";
   let popupImage = document.getElementById("popupBackgroundImage");
@@ -102,21 +96,24 @@ function closePopupImage() {
   popupImage.style.display = "none";
 }
 
-let PopupAddImageSave = document.getElementById("saveImage");
-PopupAddImageSave.addEventListener("click", saveModifyImage);
+let imageForm = document.getElementById("popupImage");
+imageForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  saveModifyImage();
+});
 
 function saveModifyImage() {
   let popupSaveImage = document.getElementById("popupImage");
   popupSaveImage.style.display = "none";
   let popupBackgrountImage = document.getElementById("popupBackgroundImage");
   popupBackgrountImage.style.display = "none";
-
   let imageNameModify = document.getElementById("popupImageName");
   let imageNameModifyValue = imageNameModify.value;
   let imageModify = document.getElementById("popupImageDirection");
   let imageDirectionModifyValue = imageModify.value;
   const templateImages = document.getElementById("imagesTemplate").content;
   const elementPLacesClone = templateImages.cloneNode(true);
+  const uniqueId = "img_" + Date.now();
   const placeNameClone = elementPLacesClone.getElementById("placeName");
   const gridImagesClone = elementPLacesClone.getElementById("gridImages");
   placeNameClone.innerHTML = imageNameModifyValue;
@@ -133,8 +130,8 @@ function saveModifyImage() {
   );
   const removeImageClone = elementPLacesClone.getElementById("deleteImage");
   const idClone = elementPLacesClone.getElementById("placeElemenImages");
-  idClone.id = imageNameModifyValue;
-  removeImageClone.dataset.target = idClone.id;
+  idClone.id = uniqueId;
+  removeImageClone.dataset.target = uniqueId;
   removeImageClone.addEventListener(
     "click",
     function () {
@@ -229,3 +226,129 @@ function closeBigImage() {
   let blackBackgrountImage = document.getElementById("blackBackgrountImage");
   blackBackgrountImage.style.display = "none";
 }
+
+enableOverlayClose("blackBackgrountImage", closeBigImage);
+enableOverlayClose("popupBackgroundImage", closePopupImage);
+enableOverlayClose("popupBackgroundProfile", closePopupContainer);
+
+function enableOverlayClose(overlayId, closeCallback) {
+  const overlay = document.getElementById(overlayId);
+  if (!overlay) return;
+  overlay.addEventListener("click", function (evt) {
+    if (evt.target === overlay) {
+      closeCallback();
+    }
+  });
+}
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    closeBigImage();
+    closePopupContainer();
+    closePopupImage();
+  }
+});
+
+const formElement = document.querySelector(".form");
+const formInputName = document.getElementById("popupContainerName");
+const formErrorName = document.getElementById("popupContainerName-error");
+const saveProfile = document.getElementById("save");
+const formInputProfession = document.getElementById("popupContainerProfession");
+const formElementImage = document.querySelector(".form-image");
+const formInputImageName = document.getElementById("popupImageName");
+const formInputImageDirection = document.getElementById("popupImageDirection");
+
+function showPopupContainer() {
+  saveProfile.setAttribute("disabled", true);
+  saveProfile.classList.add("input__btn_disabled");
+  formInputName.value = "";
+  formInputProfession.value = "";
+  let popupContainerForm = document.getElementById("popupContainer");
+  popupContainerForm.style.display = "block";
+  let popupForm = document.getElementById("popupBackgroundProfile");
+  popupForm.style.display = "block";
+}
+function closePopupContainer() {
+  let popupContainerForm = document.getElementById("popupContainer");
+  popupContainerForm.style.display = "none";
+  let popupForm = document.getElementById("popupBackgroundProfile");
+  popupForm.style.display = "none";
+}
+
+function setSubmitButtonState(isFormValid, button) {
+  if (isFormValid) {
+    button.removeAttribute("disabled");
+    button.classList.remove("input__btn_disabled");
+  } else {
+    button.setAttribute("disabled", true);
+    button.classList.add("input__btn_disabled");
+  }
+}
+
+function enableValidation(formSelector, inputSelector, submitButtonSelector) {
+  const forms = document.querySelectorAll(formSelector);
+  forms.forEach((form) => {
+    const inputs = Array.from(form.querySelectorAll(inputSelector));
+    const formButton = form.querySelector(submitButtonSelector);
+
+    function showError(input, errorMessage) {
+      const errorElement = form.querySelector(`#${input.id}-error`);
+      input.classList.add("input_type_error");
+      if (errorElement) {
+        errorElement.textContent = errorMessage;
+        errorElement.classList.add("input-error_active");
+      }
+    }
+
+    function hideError(input) {
+      const errorElement = form.querySelector(`#${input.id}-error`);
+      input.classList.remove("input_type_error");
+      if (errorElement) {
+        errorElement.textContent = "";
+        errorElement.classList.remove("input-error_active");
+      }
+    }
+
+    function checkInputValidity(input) {
+      if (input.validity.valueMissing) {
+        input.setCustomValidity("Por favor, rellena este campo.");
+      } else if (input.type === "url" && input.validity.typeMismatch) {
+        input.setCustomValidity(
+          "Por favor, introduce una dirección web válida."
+        );
+      } else {
+        input.setCustomValidity("");
+      }
+
+      if (!input.validity.valid) {
+        showError(input, input.validationMessage);
+      } else {
+        hideError(input);
+      }
+    }
+
+    function checkFormValidity() {
+      const isValid = inputs.every((input) => input.validity.valid);
+      if (isValid) {
+        formButton.removeAttribute("disabled");
+        formButton.classList.remove("input__btn_disabled");
+      } else {
+        formButton.setAttribute("disabled", true);
+        formButton.classList.add("input__btn_disabled");
+      }
+    }
+
+    inputs.forEach((input) => {
+      input.addEventListener("input", function () {
+        checkInputValidity(input);
+        checkFormValidity();
+      });
+      checkInputValidity(input);
+    });
+
+    checkFormValidity();
+  });
+}
+
+enableValidation(".popup__form", ".popup__input", ".popup__button");
+enableValidation(".form-image", ".popup__input", ".popup__button");

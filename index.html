@@ -105,53 +105,77 @@
             <p class="open-image__name" id="nameImageLookBig"></p>
           </div>
         </div>
-        <div class="popup_background" id="popup"></div>
-        <div class="popup-container" id="popupContainer">
+        <div class="popup_background" id="popupBackgroundProfile"></div>
+        <form class="popup-container form popup__form" id="popupContainer">
           <div class="popup-container-close" id="popupContainerclose">
             <p class="popup-container__closed">X</p>
           </div>
           <h3 class="popup-container__title">Editar perfil</h3>
           <input
             type="text"
-            class="popup-container__name"
+            class="popup__input popup-image__name"
             id="popupContainerName"
             placeholder="Nombre"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span id="popupContainerName-error"></span>
           <input
             type="text"
-            class="popup-container__profession"
+            class="popup-container__profession popup__input"
             id="popupContainerProfession"
             placeholder="Acerca de mí"
+            minlength="2"
+            maxlength="200"
+            required
           />
-          <div class="save-profile" id="save">
-            <p class="save-profile__changes">Guardar</p>
-          </div>
-        </div>
+          <span id="popupContainerProfession-error"></span>
+          <button
+            class="save-profile input__btn_disabled popup__button"
+            id="save"
+            type="submit"
+            disabled
+          >
+            Guardar
+          </button>
+        </form>
         <div class="popup-background_image" id="popupBackgroundImage"></div>
-        <div class="popup-image" id="popupImage">
+        <form class="popup-image form-image" id="popupImage">
           <div class="popup-image__close" id="popupImageClose">
             <p class="popup-image__closed">X</p>
           </div>
           <h3 class="popup-image__title">Nuevo Lugar</h3>
           <input
             type="text"
-            class="popup-image__name"
+            class="popup__input popup-image__name"
             id="popupImageName"
             placeholder="Nombre"
+            minlength="2"
+            maxlength="30"
+            required
           />
+          <span id="popupImageName-error"></span>
           <input
-            type="text"
-            class="popup-image__url"
+            type="url"
+            class="popup__input popup-image__url"
             id="popupImageDirection"
             placeholder="Imagen URL"
+            required
           />
-          <div class="save-image" id="saveImage">
-            <p class="save-image__changes">Guardar</p>
-          </div>
-        </div>
+          <span id="popupImageDirection-error"></span>
+          <button
+            class="save-image input__btn_disabled popup__button"
+            id="saveImage"
+            type="submit"
+            disabled
+          >
+            Guardar
+          </button>
+        </form>
       </main>
       <footer class="footer">
-        <p class="footer__copyrights">&copy; 2024. Around The U.S.</p>
+        <p class="footer__copyrights">&copy; 2025. Around The U.S.</p>
       </footer>
     </div>
     <script src="scripts/script.js"></script>

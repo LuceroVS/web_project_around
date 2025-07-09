@@ -37,13 +37,20 @@
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
+.popup-container__name:invalid {
+  border-bottom: 1px solid red;
+}
+.popup-container__profession:invalid {
+  border-bottom: 1px solid red;
+}
 .popup-container__profession {
   width: 358px;
   height: 27.34px;
-  margin: 0px 37px 48px 35px;
+  margin: 0px 37px 33px 35px;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
+
 .popup-container-close {
   position: absolute;
 }
@@ -57,6 +64,14 @@
 }
 .popup-container__closed:hover {
   opacity: 0.5;
+}
+.popupContainerName-error_active {
+  display: flex;
+  color: red;
+  font-size: 9px;
+  margin-left: 34px;
+  margin-top: -27px;
+  margin-bottom: 5px;
 }
 .popup-background_image {
   position: fixed;
@@ -93,14 +108,20 @@
 .popup-image__name {
   width: 358px;
   height: 27.26px;
-  margin: 0px 37px 29px 35px;
+  margin: 0px 37px 31px 35px;
   border: none;
   border-bottom: 1px solid #c4c4c4;
+}
+.popup-image__name:invalid {
+  border-bottom: 1px solid red;
+}
+.popup-image__url:invalid {
+  border-bottom: 1px solid red;
 }
 .popup-image__url {
   width: 358px;
   height: 27.34px;
-  margin: 0px 37px 48px 35px;
+  margin: 0px 37px 32px 35px;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
@@ -158,10 +179,16 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
+  .popup-container__name:invalid {
+    border-bottom: 1px solid red;
+  }
+  .popup-container__profession:invalid {
+    border-bottom: 1px solid red;
+  }
   .popup-container__profession {
     width: 234px;
     height: 26px;
-    margin: 0px 22px 46px 22px;
+    margin: 0px 22px 32px 22px;
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
@@ -219,10 +246,16 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
+  .popup-image__name:invalid {
+    border-bottom: 1px solid red;
+  }
+  .popup-image__url:invalid {
+    border-bottom: 1px solid red;
+  }
   .popup-image__url {
     width: 234px;
     height: 26px;
-    margin: 0px 22px 46px 22px;
+    margin: 0px 22px 30px 22px;
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
@@ -281,12 +314,18 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
+  .popup-container__name:invalid {
+    border-bottom: 1px solid red;
+  }
   .popup-container__profession {
     width: 316px;
     height: 27.34px;
     margin: 0px 29px 19px 33px;
     border: none;
     border-bottom: 1px solid #c4c4c4;
+  }
+  .popup-container__profession:invalid {
+    border-bottom: 1px solid red;
   }
   .popup-container-close {
     position: absolute;
@@ -341,6 +380,12 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
+  .popup-image__name:invalid {
+    border-bottom: 1px solid red;
+  }
+  .popup-image__url:invalid {
+    border-bottom: 1px solid red;
+  }
   .popup-image__url {
     width: 316px;
     height: 27.34px;
@@ -348,6 +393,7 @@
     border: none;
     border-bottom: 1px solid #c4c4c4;
   }
+
   .popup-image__close {
     position: absolute;
   }
