@@ -120,7 +120,7 @@
             maxlength="40"
             required
           />
-          <span id="popupContainerName-error"></span>
+          <span id="popupContainerName-error" class="input-error_active"></span>
           <input
             type="text"
             class="popup-container__profession popup__input"
@@ -130,7 +130,10 @@
             maxlength="200"
             required
           />
-          <span id="popupContainerProfession-error"></span>
+          <span
+            id="popupContainerProfession-error"
+            class="input-error_active"
+          ></span>
           <button
             class="save-profile input__btn_disabled popup__button"
             id="save"
@@ -155,7 +158,7 @@
             maxlength="30"
             required
           />
-          <span id="popupImageName-error"></span>
+          <span id="popupImageName-error" class="input-error_active"></span>
           <input
             type="url"
             class="popup__input popup-image__url"
@@ -163,7 +166,10 @@
             placeholder="Imagen URL"
             required
           />
-          <span id="popupImageDirection-error"></span>
+          <span
+            id="popupImageDirection-error"
+            class="input-error_active"
+          ></span>
           <button
             class="save-image input__btn_disabled popup__button"
             id="saveImage"
@@ -178,7 +184,6 @@
         <p class="footer__copyrights">&copy; 2025. Around The U.S.</p>
       </footer>
     </div>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/validate.js"></script>
+    <script type="module" src="scripts/script.js"></script>
   </body>
 </html>
