@@ -20,18 +20,7 @@
   margin: -1067px 12px auto 348px;
   position: absolute;
 }
-.open-image-close {
-  position: absolute;
-}
 
-.open-image__closed {
-  color: white;
-  width: 40px;
-  height: 40px;
-  margin-top: -1090px;
-  margin-left: 931px;
-  font-size: 38px;
-}
 .open-image-title {
   position: absolute;
 }

@@ -1,29 +1,57 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
-import {
-  openModal,
-  closeModal,
-  setOpenModalListener,
-  setCloseModalListener,
-  setOverlayCloseListener,
-  setEscapeCloseListener,
-  saveModify,
-  saveModifyImage,
-  showPopupContainer,
-  showPopupImage,
-  removeImages,
-  changeColorLike,
-  displayPlaceImage,
-  closeBigImage,
-  setSubmitButtonState,
-} from "./utils.js";
+import Card from "../components/Card.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForms.js";
+import FormValidator from "../components/FormValidator.js";
 
+// Instancia de popup de formulario para editar perfil
+const profilePopup = new PopupWithForm("#popupContainer", (formData) => {
+  // Aquí actualizas la info del usuario en la página
+  // Ejemplo:
+  document.querySelector(".profile__name").textContent = formData.name;
+  document.querySelector(".profile__profession").textContent = formData.job;
+  profilePopup.close();
+});
+profilePopup.setEventListeners();
+
+// Instancia de popup de formulario para nueva imagen
+const imageFormPopup = new PopupWithForm("#popupImage", (formData) => {
+  const card = new Card(
+    formData.name,
+    formData.link,
+    "#imagesTemplate",
+    handleCardClick
+  );
+  document.getElementById("elemenPlacesImages").prepend(card.getCardElement());
+  imageFormPopup.close();
+});
+imageFormPopup.setEventListeners();
+
+// Cerrar el popup al hacer clic en el "X"
+const closeImageBtn = document.querySelector(".popup__content__closeimage");
+if (closeImageBtn) {
+  closeImageBtn.addEventListener("click", () => {
+    imageFormPopup.close();
+  });
+}
+
+// Instancia del popup de imagen
+const imagePopup = new PopupWithImage("#popupImageModal");
+imagePopup.setEventListeners();
+
+function handleCardClick({ name, link }) {
+  imagePopup.open({
+    src: link,
+    alt: name,
+    caption: name,
+  });
+}
+
+// Array de tarjetas iniciales
 const initialCards = [
   {
     name: "Alaska",
     link: "https://images.unsplash.com/photo-1673114819432-1aa36952dd3e?q=80&w=2602&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-
   {
     name: "Parque nacional del Gran Cañón",
     link: "https://images.unsplash.com/photo-1585022724447-cb15e87b30be?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -46,93 +74,62 @@ const initialCards = [
   },
 ];
 
-const elemenPlacesImages = document.getElementById("elemenPlacesImages");
+// Renderiza las tarjetas
+const container = document.getElementById("elemenPlacesImages");
 initialCards.forEach((cardData) => {
-  const card = new Card(cardData.name, cardData.link, "#imagesTemplate");
-  elemenPlacesImages.appendChild(card.getCardElement());
+  const card = new Card(
+    cardData.name,
+    cardData.link,
+    "#imagesTemplate",
+    handleCardClick
+  );
+  container.appendChild(card.getCardElement());
+});
+
+// cerrar el popup de perfil con el "X"
+const profileClose = document.querySelector(".popup__content__closed");
+if (profileClose) {
+  profileClose.addEventListener("click", () => {
+    profilePopup.close();
+  });
+}
+
+// Listener para cerrar el popup de nueva imagen con el "X"
+const imageClose = document.querySelector(".popup__content-image__closed");
+if (imageClose) {
+  imageClose.addEventListener("click", () => {
+    imageFormPopup.close();
+  });
+}
+
+// Listener para cerrar el popup de imagen maximizada con el "X"
+const imageBigClose = document.querySelector(".popup_image-closed");
+if (imageBigClose) {
+  imageBigClose.addEventListener("click", () => {
+    imagePopup.close();
+  });
+}
+
+// Ejemplo de cómo abrir los popups desde botones
+document.getElementById("profile_edit_button").addEventListener("click", () => {
+  profilePopup.open();
+});
+document.getElementById("image_edit_button").addEventListener("click", () => {
+  imageFormPopup.open();
 });
 
 const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "input__btn_disabled",
+  inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 };
 
-const profileForm = document.getElementById("popupContainer");
+const profileForm = document.querySelector("#popupContainer .popup__form");
 const profileValidator = new FormValidator(validationConfig, profileForm);
 profileValidator.enableValidation();
 
-const imageForm = document.getElementById("popupImage");
+const imageForm = document.querySelector("#popupImage .popup__form");
 const imageValidator = new FormValidator(validationConfig, imageForm);
 imageValidator.enableValidation();
-
-setOpenModalListener(
-  "profile_edit_button",
-  "popupContainer",
-  "popupBackgroundProfile"
-);
-document.getElementById("profile_edit_button").addEventListener("click", () => {
-  profileValidator.resetValidation();
-});
-
-setOpenModalListener("image_edit_button", "popupImage", "popupBackgroundImage");
-document.getElementById("image_edit_button").addEventListener("click", () => {
-  imageValidator.resetValidation();
-});
-// Cierre por botón de perfil
-setCloseModalListener(
-  "popupContainerclose",
-  "popupContainer",
-  "popupBackgroundProfile"
-);
-document.getElementById("popupContainerclose").addEventListener("click", () => {
-  profileValidator.resetValidation();
-});
-
-// Cierre por botón de imagen
-setCloseModalListener("popupImageClose", "popupImage", "popupBackgroundImage");
-document.getElementById("popupImageClose").addEventListener("click", () => {
-  imageValidator.resetValidation();
-});
-
-// Cierre por botón de imagen grande
-setCloseModalListener("openImageClose", "openImage", "blackBackgrountImage");
-document.getElementById("openImageClose").addEventListener("click", () => {
-  closeBigImage();
-});
-// Cierre por overlay
-setOverlayCloseListener("popupBackgroundProfile", () => {
-  closeModal("popupContainer", "popupBackgroundProfile");
-  profileValidator.resetValidation();
-});
-setOverlayCloseListener("blackBackgrountImage", closeBigImage);
-
-setOverlayCloseListener("popupBackgroundImage", () => {
-  closeModal("popupImage", "popupBackgroundImage");
-  imageValidator.resetValidation();
-});
-
-// Cierre por Escape
-setEscapeCloseListener([
-  () => {
-    closeModal("popupContainer", "popupBackgroundProfile");
-    profileValidator.resetValidation();
-  },
-  () => {
-    closeModal("popupImage", "popupBackgroundImage");
-    imageValidator.resetValidation();
-  },
-  closeBigImage,
-]);
-
-// Submit de formularios
-profileForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  saveModify();
-});
-imageForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  saveModifyImage();
-});

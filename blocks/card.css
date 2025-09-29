@@ -1,0 +1,44 @@
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+.card__title {
+  font-size: 18px;
+  margin: 12px;
+}
+.card__like,
+.card__delete {
+  position: absolute;
+  top: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.card__like {
+  right: 48px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/like.png");
+  background-size: cover;
+}
+.card__delete {
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/trash.svg");
+  background-size: cover;
+}
